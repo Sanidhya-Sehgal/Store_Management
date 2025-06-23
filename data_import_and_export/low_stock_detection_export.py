@@ -1,3 +1,17 @@
+
+import mysql.connector
+import pandas as pd
+
+# STEP 1: Connect to your MySQL database
+conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="Osho*2005",
+    database="StoreManagement"
+)
+
+# STEP 2: Define the query with dynamic reorder point logic
+query = """
 WITH Latest_Inventory AS (
     SELECT 
         I.Store_ID,
@@ -48,3 +62,16 @@ SELECT
 FROM Latest_Inventory LI
 JOIN Category_Avg CA 
     ON LI.Category = CA.Category;
+
+"""
+
+# STEP 3: Execute and fetch to a DataFrame
+df = pd.read_sql(query, conn)
+
+# STEP 4: Export to CSV
+df.to_csv("low_stock_detection.csv", index=False)
+print("✅ Reorder points exported to 'low_stock_detection.csv'")
+
+# STEP 5: Close connection
+conn.close()
+
