@@ -1,4 +1,3 @@
-
 import mysql.connector
 import pandas as pd
 
@@ -10,7 +9,7 @@ conn = mysql.connector.connect(
     database="StoreManagement"
 )
 
-# STEP 2: Define the query with dynamic reorder point logic
+# Step 2: Define the query
 query = """
 SELECT 
     i.Store_ID,
@@ -18,14 +17,7 @@ SELECT
     p.Category,
     SUM(i.Units_Sold) AS Total_Units_Sold,
     ROUND(AVG(i.Inventory_Level), 2) AS Avg_Inventory,
-    ROUND(SUM(i.Units_Sold) / AVG(i.Inventory_Level), 2) AS Turnover_Rate,
-
-    CASE
-        WHEN (SUM(i.Units_Sold) / AVG(i.Inventory_Level)) >= 1.5 THEN 'High'
-        WHEN (SUM(i.Units_Sold) / AVG(i.Inventory_Level)) >= 0.8 THEN 'Medium'
-        ELSE 'Low'
-    END AS Turnover_Category
-
+    ROUND(SUM(i.Units_Sold) / AVG(i.Inventory_Level), 2) AS Turnover_Rate
 FROM 
     Inventory i
 JOIN 
@@ -34,16 +26,16 @@ GROUP BY
     i.Store_ID, i.Region, p.Category
 ORDER BY 
     i.Store_ID, p.Category;
-
 """
 
-# STEP 3: Execute and fetch to a DataFrame
+# Step 3: Load query result into a DataFrame
 df = pd.read_sql(query, conn)
 
-# STEP 4: Export to CSV
-df.to_csv("turnover.csv", index=False)
-print("✅ Reorder points exported to 'turnover.csv'")
+# Step 4: Export to CSV
+df.to_csv("turnover_data.csv", index=False)
 
-# STEP 5: Close connection
+# Step 5: Close the connection
 conn.close()
+
+print("✅ Exported as turnover_data.csv")
 
