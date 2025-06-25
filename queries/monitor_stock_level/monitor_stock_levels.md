@@ -67,31 +67,6 @@ JOIN Product P ON I.Product_ID = P.Product_ID;
 ```
 
 ---
-
-## 4. Stock Level Data Screenshots
-
-Below are screenshots showing the stock level data at various stages:
-
-![stock level data screenshots](monitor_stock_levels_images/Screenshot%20from%202025-06-18%2000-23-46.png)
-![stock level data screenshots](monitor_stock_levels_images/Screenshot%20from%202025-06-18%2000-24-10.png)
-![stock level data screenshots](monitor_stock_levels_images/Screenshot%20from%202025-06-18%2000-24-27.png)
-![stock level data screenshots](monitor_stock_levels_images/Screenshot%20from%202025-06-18%2000-24-49.png)
-![stock level data screenshots](monitor_stock_levels_images/Screenshot%20from%202025-06-18%2000-25-00.png)
-![stock level data screenshots](monitor_stock_levels_images/Screenshot%20from%202025-06-18%2000-26-00.png)
-![stock level data screenshots](monitor_stock_levels_images/Screenshot%20from%202025-06-18%2000-26-18.png)
-![stock level data screenshots](monitor_stock_levels_images/Screenshot%20from%202025-06-18%2000-26-34.png)
-![stock level data screenshots](monitor_stock_levels_images/Screenshot%20from%202025-06-18%2000-26-44.png)
-![stock level data screenshots](monitor_stock_levels_images/Screenshot%20from%202025-06-18%2000-26-51.png)
-![stock level data screenshots](monitor_stock_levels_images/Screenshot%20from%202025-06-18%2000-27-03.png)
-![stock level data screenshots](monitor_stock_levels_images/Screenshot%20from%202025-06-18%2000-27-11.png)
-![stock level data screenshots](monitor_stock_levels_images/Screenshot%20from%202025-06-18%2000-27-28.png)
-![stock level data screenshots](monitor_stock_levels_images/Screenshot%20from%202025-06-18%2000-27-37.png)
-![stock level data screenshots](monitor_stock_levels_images/Screenshot%20from%202025-06-18%2000-27-51.png)
-![stock level data screenshots](monitor_stock_levels_images/Screenshot%20from%202025-06-18%2000-28-02.png)
-![stock level data screenshots](monitor_stock_levels_images/Screenshot%20from%202025-06-18%2000-28-11.png)
-![stock level data screenshots](monitor_stock_levels_images/Screenshot%20from%202025-06-18%2000-28-21.png)
----
-
 ## 5. Aggregate Stock Levels by Store, Region, and Category
 
 Now, we can aggregate the stock levels by `Store_ID`, `Region`, and `Category` to get the total and average stock levels:
