@@ -101,3 +101,31 @@ FROM (
 GROUP BY Store_ID, Region, Category
 ORDER BY Store_ID, Category;
 ```
+## 6. Adding Pricing
+
+```sql
+SELECT 
+    I.Store_ID,
+    I.Region,
+    P.Category,
+    I.Product_ID,
+    I.Inventory_Level,
+    PR.Price,
+    I.Date AS Latest_Stock_Date
+FROM Inventory I
+JOIN (
+    SELECT Store_ID, Region, Product_ID, MAX(Date) AS MaxDate
+    FROM Inventory
+    GROUP BY Store_ID, Region, Product_ID
+) AS Latest 
+  ON I.Store_ID = Latest.Store_ID
+ AND I.Region = Latest.Region
+ AND I.Product_ID = Latest.Product_ID
+ AND I.Date = Latest.MaxDate
+JOIN Product P ON I.Product_ID = P.Product_ID
+JOIN Pricing PR 
+  ON I.Store_ID = PR.Store_ID
+ AND I.Region = PR.Region
+ AND I.Product_ID = PR.Product_ID
+ AND I.Date = PR.Date;
+```

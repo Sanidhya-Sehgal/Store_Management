@@ -17,6 +17,7 @@ SELECT
     P.Category,
     I.Product_ID,
     I.Inventory_Level,
+    PR.Price,
     I.Date AS Latest_Stock_Date
 FROM Inventory I
 JOIN (
@@ -28,7 +29,13 @@ JOIN (
  AND I.Region = Latest.Region
  AND I.Product_ID = Latest.Product_ID
  AND I.Date = Latest.MaxDate
-JOIN Product P ON I.Product_ID = P.Product_ID;
+JOIN Product P ON I.Product_ID = P.Product_ID
+JOIN Pricing PR 
+  ON I.Store_ID = PR.Store_ID
+ AND I.Region = PR.Region
+ AND I.Product_ID = PR.Product_ID
+ AND I.Date = PR.Date;
+
 """
 
 # STEP 3: Execute and fetch to a DataFrame
