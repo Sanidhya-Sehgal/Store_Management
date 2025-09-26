@@ -79,6 +79,9 @@ Making retail smarter and more sustainable:
 - **Optimize cash flow** through better inventory management
 - **Data-driven decisions** instead of guesswork
 
+## Drive link
+[Store manager](https://drive.google.com/drive/folders/1nDoB4ifAy7PTMgsJmF2nOL35tp7tEDYd)
+
 ## 🤝 Connect
 
 Built by [Sanidhya Sehgal](https://github.com/Sanidhya-Sehgal) , [Lael Mariya Bobby](https://github.com/Lael-Mariya)    
