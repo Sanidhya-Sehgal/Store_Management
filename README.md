@@ -81,7 +81,7 @@ Making retail smarter and more sustainable:
 
 ## 🤝 Connect
 
-Built by [Sanidhya Sehgal](https://github.com/Sanidhya-Sehgal)
+Built by [Sanidhya Sehgal](https://github.com/Sanidhya-Sehgal) , [Lael Mariya Bobby](https://github.com/Lael-Mariya)    
 
 ---
 
